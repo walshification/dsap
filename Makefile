@@ -1,0 +1,4 @@
+test:
+	black .
+	mypy .
+	pytest
