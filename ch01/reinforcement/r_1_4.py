@@ -9,4 +9,9 @@ def sum_of_smaller_squares(n: int) -> int:
     """Returns the sum of the squares of all the positive integers
     smaller than n.
     """
-    return sum(num * num for num in range(n - 1, 0, -1))
+    total = 0
+    while n:
+        n -= 1
+        total += n * n
+
+    return total
