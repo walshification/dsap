@@ -1,3 +1,5 @@
+.PHONY = test fmt deps
+
 test:
 	black . --check
 	mypy .
@@ -5,3 +7,6 @@ test:
 
 fmt:
 	black .
+
+deps:
+	pipenv install --dev
