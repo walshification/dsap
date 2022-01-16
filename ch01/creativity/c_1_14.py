@@ -14,7 +14,7 @@ def has_odd_product_pair(data: List[int]) -> bool:
     # End at data_length - 1 because the last index gets checked by all the others.
     for k in range(data_length - 1):
         for j in range(k + 1, data_length):
-            if (data[k] * data[j]) % 2 == 1:
+            if (data[k] * data[j]) % 2 == 1 and data[k] != data[j]:
                 return True
 
     return False
