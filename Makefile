@@ -1,4 +1,7 @@
 test:
-	black .
+	black . --check
 	mypy .
 	pytest
+
+fmt:
+	black .
