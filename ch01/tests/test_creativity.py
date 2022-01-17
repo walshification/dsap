@@ -16,3 +16,10 @@ def test_has_odd_product_pair():
 def test_are_distinct():
     assert creativity.are_distinct([1, 2, 3, 4, 5]) is True
     assert creativity.are_distinct([1, 2, 1]) is False
+
+
+def test_my_shuffle():
+    ordered = [1, 2, 3, 4, 5, 6]
+    shuffled = creativity.my_shuffle(ordered)
+    assert set(ordered) == set(shuffled)
+    assert any(ordered[idx] != shuffled[idx] for idx in range(len(ordered)))
