@@ -4,7 +4,7 @@ relying on Python's comprehension syntax and the built-in sum function.
 """
 
 
-def sum_smaller_odd_squares(n: int) -> int:
+def sum_smaller_odd_squares_7(n: int) -> int:
     """Returns the sum of the squares of all the odd positive integers
     smaller than n.
     """
