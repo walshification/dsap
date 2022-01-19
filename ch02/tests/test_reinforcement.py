@@ -1,4 +1,6 @@
-from ch02.reinforcement import Flower
+import pytest
+
+from ch02.reinforcement import CarefulCreditCard, Flower
 
 
 def test_flower_creation():
@@ -15,3 +17,12 @@ def test_flower_updates():
     assert flower.get_name() == "violet"
     assert flower.get_petal_count() == 10
     assert flower.get_price() == 3.0
+
+
+def test_careful_credit_card():
+    """
+    Careful credit card raises TypeError if charge is not numeric.
+    """
+    card = CarefulCreditCard("Bob Doobis", "Chase", "1234", 5000)
+    with pytest.raises(TypeError):
+        card.charge("bogus")
