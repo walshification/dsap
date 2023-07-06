@@ -7,10 +7,10 @@ range. Using only the `randrange` function, implement your own version
 of the `choice` function.
 """
 from random import randrange, seed
-from typing import List
+from typing import List, Optional
 
 
-def my_choice(data: List[int], seed_key: int = None) -> int:
+def my_choice(data: List[int], seed_key: Optional[int] = None) -> int:
     """Implements a random choice function using randrange."""
     seed(seed_key)
     return data[randrange(len(data))]
