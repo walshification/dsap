@@ -1,6 +1,6 @@
 import pytest
 
-from ch04.creativity import are_unique, min_max
+from ch04.creativity import are_unique, min_max, multiply
 
 
 @pytest.mark.parametrize(
@@ -26,3 +26,18 @@ def test_min_max(sequence, result):
 )
 def test_are_unique(sequence, result):
     assert are_unique(sequence) == result
+
+
+@pytest.mark.parametrize(
+    ("m", "n", "product"),
+    (
+        (2, 3, 6),
+        (1, 0, 0),
+        (0, 5, 0),
+        (1, 3, 3),
+        (3, 1, 3),
+        (6, 12, 72),
+    ),
+)
+def test_multiply(m, n, product):
+    assert multiply(m, n) == product
