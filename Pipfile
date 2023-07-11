@@ -9,8 +9,8 @@ name = "pypi"
 pytest = "*"
 ipython = "*"
 black = "*"
-ipdb = "*"
 mypy = "*"
+pdbpp = "*"
 
 [requires]
 python_version = "3.10"
