@@ -1,6 +1,6 @@
 import pytest
 
-from ch04.creativity import are_unique, min_max, multiply
+from ch04.creativity import are_unique, min_max, multiply, towers_of_hanoi
 
 
 @pytest.mark.parametrize(
@@ -41,3 +41,10 @@ def test_are_unique(sequence, result):
 )
 def test_multiply(m, n, product):
     assert multiply(m, n) == product
+
+
+def test_towers_of_hanoi():
+    start, spare, destination = towers_of_hanoi(len([3, 2, 1]), [3, 2, 1], [], [])
+    assert start == []
+    assert spare == []
+    assert destination == [3, 2, 1]
