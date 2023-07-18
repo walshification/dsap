@@ -1,2 +1,3 @@
 from ch05.reinforcement.r_5_2 import determine_size_memory_increases
 from ch05.reinforcement.r_5_4 import BetterDynamicArray
+from ch05.reinforcement.r_5_6 import EfficientInsertDynamicArray

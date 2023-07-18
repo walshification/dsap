@@ -20,11 +20,29 @@ class DynamicArray:
             raise IndexError("invalid index")
         return self._A[k]
 
+    def __repr__(self):
+        representation = ["["]
+        # for item in self._A:
+        #     representation.append(str(item))
+        representation = ["]"]
+        return str(self._A)
+
     def append(self, obj):
         """Add object to end of the array."""
         if self._n == self._capacity:
             self._resize(2 * self._capacity)
         self._A[self._n] = obj
+        self._n += 1
+
+    def insert(self, k, value):
+        """Insert value at index k, shifting subsequent values rightward."""
+        if self._n == self._capacity:
+            self._resize(2 * self._capacity)
+
+        for j in range(self._n, k, -1):
+            self._A[j] = self._A[j - 1]
+
+        self._A[k] = value
         self._n += 1
 
     def _resize(self, c):
