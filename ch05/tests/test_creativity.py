@@ -1,7 +1,12 @@
 from collections import defaultdict
 from copy import deepcopy
 
-from ch05.creativity import PoppableDynamicArray, shuffle
+from ch05.creativity import (
+    PoppableDynamicArray,
+    SettableDynamicArray,
+    remove_all,
+    shuffle,
+)
 
 
 def test_shuffle():
@@ -58,3 +63,13 @@ def test_poppable_dynamic_array():
 
     assert len(array) == 0
     assert array._capacity == 2
+
+
+def test_remove_all():
+    data = SettableDynamicArray()
+    for i in [1, 2, 3, 4, 5, 1]:
+        data.append(i)
+
+    remove_all(data, 1)
+
+    assert 1 not in data
