@@ -5,6 +5,7 @@ from ch06.empty_exception import Empty
 
 class ArrayQueue:
     """FIFO queue implementation using a Python list as underlying storage."""
+
     DEFAULT_CAPACITY = 10
 
     def __init__(self) -> None:
@@ -46,8 +47,8 @@ class ArrayQueue:
     def enqueue(self, e: Any) -> None:
         """Add an element to the back of the queue."""
         if self._size == len(self._data):
-            self._resize(2 * len(self.data))
-        avail = (self._front + self.size) % len(self._data)
+            self._resize(2 * len(self._data))
+        avail = (self._front + self._size) % len(self._data)
         self._data[avail] = e
         self._size += 1
 

@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, List
 
 from ch06.empty_exception import Empty
 
@@ -8,7 +8,7 @@ class ArrayStack:
 
     def __init__(self) -> None:
         """Create an empty stack."""
-        self._data = []
+        self._data: List[Any] = []
 
     def __len__(self) -> int:
         """Return the number of elements in the stack."""
