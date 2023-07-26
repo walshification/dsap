@@ -1,6 +1,6 @@
 from typing import Any
 
-from ch06.empty_exception import Empty
+from ch06.exceptions import Empty
 
 
 class ArrayQueue:

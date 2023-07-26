@@ -6,7 +6,7 @@ from collections import deque
 
 from typing import Any, Deque
 
-from ch06.empty_exception import Empty
+from ch06.exceptions import Empty
 
 
 class DequeQueue:

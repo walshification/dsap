@@ -2,8 +2,15 @@ import pytest
 
 from ch06.array_queue import ArrayQueue
 from ch06.array_stack import ArrayStack
-from ch06.empty_exception import Empty
-from ch06.reinforcement import DequeDeque, DequeQueue, clear, does_match, reverse, transfer
+from ch06.exceptions import Empty
+from ch06.reinforcement import (
+    DequeDeque,
+    DequeQueue,
+    clear,
+    does_match,
+    reverse,
+    transfer,
+)
 
 
 def test_transfer():

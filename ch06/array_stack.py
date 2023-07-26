@@ -1,14 +1,15 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
-from ch06.empty_exception import Empty
+from ch06.exceptions import Empty, Full
 
 
 class ArrayStack:
     """LIFO Stack implementation using a Python list as underlying storage."""
 
-    def __init__(self) -> None:
+    def __init__(self, maxlen: Optional[int] = None) -> None:
         """Create an empty stack."""
         self._data: List[Any] = []
+        self._max = maxlen
 
     def __len__(self) -> int:
         """Return the number of elements in the stack."""
@@ -20,6 +21,8 @@ class ArrayStack:
 
     def push(self, e) -> None:
         """Add element e to the top of the stack."""
+        if self._max is not None and len(self._data) == self._max:
+            raise Full("Stack is full.")
         self._data.append(e)
 
     def top(self) -> Any:
