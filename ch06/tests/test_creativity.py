@@ -98,6 +98,27 @@ def test_is_matched_html(html, expected_result):
                 frozenset({1, 2, 3}),
             },
         ),
+        (
+            {10, 2, 3, 4},
+            {
+                frozenset(),
+                frozenset({10}),
+                frozenset({2}),
+                frozenset({3}),
+                frozenset({4}),
+                frozenset({10, 2}),
+                frozenset({10, 3}),
+                frozenset({10, 4}),
+                frozenset({2, 3}),
+                frozenset({2, 4}),
+                frozenset({3, 4}),
+                frozenset({10, 2, 3}),
+                frozenset({10, 2, 4}),
+                frozenset({10, 3, 4}),
+                frozenset({2, 3, 4}),
+                frozenset({10, 2, 3, 4}),
+            },
+        ),
     ),
 )
 def test_generate_subsets(initial_set, expected_subsets):
